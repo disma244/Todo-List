@@ -1,0 +1,395 @@
+:root {
+    --offBlack: #21252a;
+    --darkestGrey: #343a40;
+    --darkerGrey: #495057;
+    --darkGrey: #868e96;
+    --grey: #adb5bd;
+    --lightGrey: #cfd4da;
+    --lighterGrey:#dee2e6;
+    --lightestGrey:#eaedef;
+    --offWhite: #f1f3f5;
+    --text: #f8f9fa;
+
+    --darkestRed:#611818;
+    --darkRed:#891b1b;
+    --red: #b82020;
+    --lightRed: #dc3030;
+    --lightestRed:#e46464;
+    --redPanel: #f5aaaa;
+    --redText:#fce8e8;
+
+    --darkestGreen:#145239;
+    --darkGreen:#197741;
+    --green: #259d58;
+    --lightGreen: #38c172;
+    --lightestGreen:#74d99f;
+    --GreenPanel: #a8eec1;
+    --GreenText:#e3fcec;
+
+    --darkestYellow:#5c4813;
+    --darkYellow:#8c6d1f;
+    --Yellow: #caa53d;
+    --lightYellow: #f4ca64;
+    --lightestYellow:#fae29f;
+    --YellowPanel: #fdf3d7;
+    --YellowText:#fffcf4;
+
+    --darkestBlue:#124544;
+    --darkBlue:#1b655e;
+    --Blue: #2a9187;
+    --lightBlue: #3caea3;
+    --lightestBlue:#6ed7d3;
+    --BluePanel: #a8eeeb;
+    --BlueText:#e7fffe;
+}
+
+body {
+    margin: 0;
+    background-color: var(--offBlack);
+    color: var(--text);
+
+}
+
+header {
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+
+}
+
+header form {
+    height: 40px;
+}
+
+header input {
+    width: 370px;
+    height: 40px;
+    border: 10px;
+    border-radius: 3px 0px 0px 3px;
+    margin-right: 0;
+    border-color: var(--grey);
+    background-color: var(--darkestGrey);
+    color: var(--lightGrey);
+    text-align: center;
+}
+
+header button {
+    width: 120px;
+    height: 40px;
+    border: 10px;
+    border-radius: 0px 3px 3px 0px;
+    margin-left: 0;
+    border-color: var(--grey);
+    background-color: var(--darkestGrey);
+    color: var(--text);
+}
+
+header button:hover {
+    width: 120px;
+    height: 40px;
+    border: 10px;
+    border-radius: 0px 3px 3px 0px;
+    margin-left: 0;
+    border-color: var(--grey);
+    background-color: var(--text);
+    color: var(--darkestGrey);
+}
+
+header button:active {
+    width: 120px;
+    height: 40px;
+    border: 10px;
+    border-radius: 0px 3px 3px 0px;
+    margin-left: 0;
+    border-color: var(--grey);
+    background-color: var(--offBlack);
+    color: var(--text);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.fullList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+}
+
+.listItem {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+    border-left: 0.15rem solid var(--grey);
+    border-right: 0.15rem solid var(--grey);
+    padding: 0px 10px 0px 10px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 10%;
+}
+
+.delete {
+    align-self: right;
+    height: 30px;
+    width: 40px;
+    border: 1px solid var(--lightestRed);
+    border-radius: 5px 5px 5px 5px;
+    background-color: var(--offBlack);
+    color: var(--lightestRed);
+    font-weight: bolder;
+}
+
+.complete {
+    align-self: right;
+    height: 30px;
+    width: 40px;
+    margin-right: 7px;
+    border: 1px solid var(--lightestGreen);
+    border-radius: 5px 5px 5px 5px;
+    background-color: var(--offBlack);
+    color: var(--lightestGreen);
+    font-weight: bolder;
+}
+
+.divider {
+    position: relative;
+    height: 1px;
+    border-left: 0.15rem solid var(--grey);
+    border-right: 0.15rem solid var(--grey);
+}
+
+.experiment::before {
+    content: "";
+	position: absolute;
+	top: 0;
+	left: 5%;
+	right: 5%;
+	width: 90%;
+	height: 1px;
+    background-image: linear-gradient(to right, transparent, rgb(173,181,189), transparent);
+}
+
+.light-experiment::before {
+    content: "";
+	position: absolute;
+	top: 0;
+	left: 5%;
+	right: 5%;
+	width: 90%;
+	height: 1px;
+    background-image: linear-gradient(to right, transparent, rgb(73,80,87), transparent);
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.content h2 {
+    padding-left: 5%
+}
+
+.todo {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    width: 100%;
+    padding: 0px;
+    color: var(--offBlack);
+}
+
+.todo-hide {
+    display: none;
+    flex-direction: column;
+    justify-content:center;
+    width: 100%;
+    padding: 0px;
+    background-color: var(--darkerGrey);
+    color: var(--offBlack);
+}
+
+.todo-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px
+}
+
+.todo-btn {
+    display: flex;
+    width: 10%;
+    height: 50px;
+    justify-content:space-around;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.todo-complete {
+    width: 40%;
+    height: 80%;
+    border: 1px solid var(--darkestGreen);
+    border-radius: 4px 4px 4px 4px;
+    background-color: var(--green);
+    color: var(--GreenText);
+    font-size: 20px;
+    font-style: bold;
+}
+
+.todo-delete {
+    width: 40%;
+    height: 80%;
+    border: 1px solid var(--darkestRed);
+    border-radius: 4px 4px 4px 4px;
+    background-color: var(--red);
+    color: var(--redText);
+    font-size: 20px;
+    font-style: bold;
+}
+
+.p-content {
+    width: 90%;
+    padding-left: 10px;
+    background-color: var(--lightestGrey);
+    color: var(--darkestGrey);
+    font-size: 16px;
+
+}
+
+.p-content-complete {
+    width: 90%;
+    padding-left: 10px;
+    background-color: var(--lightestGrey);
+    color: var(--grey);
+    font-size: 16px;
+    text-decoration: line-through;
+}
+
+.list-item-complete {
+    display: none;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+    border-left: 0.15rem solid var(--grey);
+    border-right: 0.15rem solid var(--grey);
+    padding: 0px 10px 0px 10px;
+}
+
+.taskForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 50%;
+    margin-left: 25%;
+    background-color: var(--offWhite);
+    color: var(--darkestGrey);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.taskForm-hide {
+    display: none;
+}
+
+#actualForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#title {
+    margin-bottom: 0.1rem;
+    width: 400px;
+    height: 30px;
+}
+
+.formInput {
+    margin-bottom: 0.1rem;
+    width: 400px;
+    height: 25px;
+}
+
+#formAdd {
+    width: 150px;
+    height: 40px;
+    margin-top: 1rem;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--darkestGrey);
+}
+
+#formRemove {
+    width: 150px;
+    height: 40px;
+    margin-top: 1rem;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--darkestGrey);
+}
+
+.formLabel {
+    text-align: center;
+    margin-bottom: 0.4rem;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--darkestGrey);
+}
+
+#formSubmit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 12%;
+    width: 20%;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--darkestGrey);
+}
+
+
+
+.black {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: rgba(33, 37, 42, 0.7);
+}
+
+.black-hide {
+    display: none;
+}
+
+#createBtn {
+    background-color: var(--darkGreen);
+}
+
+
+.template {
+    display: none;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="taskForm-hide">
+        <form action="" id="actualForm">
+            <label for="Title" name="title" class="formLabel">To-do</label>
+            <input type="text" id="title" name="Title">
+            <br> <br>
+            <label for="step0" name="label" class="formLabel">Step 1</label>
+            <input type="text" name="task" class="formInput">
+            <br>
+            <label for="step1" name="label" class="formLabel">Step 2</label>
+            <input type="text" name="task" class="formInput">
+            <br>
+            <label for="step2" name="label" class="formLabel">Step 3</label>
+            <input type="text" name="task" class="formInput">
+            <br>
+            <button id="formAdd">Add</button>
+            <button id="formRemove">Remove</button>
+        </form>
+        <button id="formSubmit">Submit</button>
+    </div>
+
+    <div class="black-hide"></div>
+
+    <div id="todoForm">
+        <header>
+            <form action="">
+                <button type='submit' id="createBtn">Create New</button>
+            </form>
+        </header>
+        <div class="container">
+            <ul class="fullList">
+                
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- TEMPLATE HTML -->
+
+    <li class="listItem template" id="template-Li">
+        <div class ='content'>
+            <h2 class="text">WORD2</h2>
+            <div class="buttons">
+                <button class="complete">O</button>
+                <button class="delete">X</button>
+            </div>
+        </div>
+    </li>
+
+    <ul class="todo-hide template" id="template-Ul">
+
+    </ul>
+
+    <li class="template" id="template-Li-todo">
+        <div class="todo-content">
+            <div class="p-content">
+                <p>word</p> 
+            </div>
+            <div class="todo-btn">
+                <button class="todo-complete">O</button>
+                <button class="template-todo-delete">X</button>
+            </div>
+        </div>
+    </li>
+
+
+</body>
+<script src="app.js"></script>
+</html>
