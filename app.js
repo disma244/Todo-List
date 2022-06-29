@@ -20,6 +20,10 @@ let submitForm = document.querySelector('#formSubmit');
 
 let dataArray = [];
 
+if(localStorage.todoCompleteArray == null) {
+    localStorage.setItem('todoCompleteArray', JSON.stringify(dataArray));
+}
+
 // these if statements maintain localStorage keys as arrays to push and pull things from
 
 if(localStorage.names == null) {
@@ -38,6 +42,7 @@ const itemData = JSON.parse(localStorage.getItem('names'));
 const todoData = JSON.parse(localStorage.getItem('todos'));
 const completeItemData = JSON.parse(localStorage.getItem('completeNames'));
 const completeTodoData = JSON.parse(localStorage.getItem('completeTodos'));
+const todoCompleteArray = JSON.parse(localStorage.getItem('todoCompleteArray'));
 
 // adds event listeners to one off elements
 
@@ -69,6 +74,16 @@ for (let i = 0; i < itemData.length; i++) {
         liTodo.firstElementChild.lastElementChild.firstElementChild.addEventListener('click', completeTodoTask);
         liTodo.firstElementChild.lastElementChild.lastElementChild.classList = 'todo-delete';
         liTodo.firstElementChild.lastElementChild.lastElementChild.addEventListener('click', deleteTodoTask);
+        // console.log(liTodo.firstElementChild.firstElementChild.firstElementChild.textContent);
+        for (item of todoCompleteArray) {
+            console.log(item);
+            if (liTodo.firstElementChild.firstElementChild.firstElementChild.textContent == item) {
+                liTodo.firstElementChild.firstElementChild.classList = 'p-content-complete';
+                let delBtn = liTodo.firstElementChild.lastElementChild.firstElementChild;
+                liTodo.firstElementChild.lastElementChild.removeChild(delBtn);
+            }
+        }
+        
         ul.appendChild(liTodo);
     }
 
@@ -155,9 +170,11 @@ function completeTask(e) {
 function completeTodoTask(e) {
 
     if(confirm('confirm step completed?')) {
+        todoCompleteArray.push(e.target.parentNode.parentNode.firstElementChild.firstElementChild.textContent);
         e.target.parentNode.previousElementSibling.classList = 'p-content-complete';
         let button = e.target.parentNode;
         button.removeChild(e.target);
+        localStorage.setItem('todoCompleteArray', JSON.stringify(todoCompleteArray));
     };
 };
 
